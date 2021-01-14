@@ -27,8 +27,8 @@ RUN apt-get install -y python3.6-dev \
 
 RUN wget http://ccl.cse.nd.edu/software/files/cctools-7.1.12-source.tar.gz
 RUN tar -xzvf cctools-7.1.12-source.tar.gz
-RUN cd cctools-release-7.1.12
-RUN ./configure --prefix /usr && make && make install
+RUN cd cctools-7.1.12-source
+RUN ./configure && make && make install
 RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 RUN apt-get update
 RUN apt-get install -y libgdal-dev
