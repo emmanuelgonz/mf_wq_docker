@@ -40,7 +40,7 @@ RUN add-apt-repository ppa:ubuntugis/ppa
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
 RUN apt-get install -y locales && locale-gen en_US.UTF-8
-RUN export CCTOOLS_HOME=/opt/cctools-7.1.12-x86_64-centos7
+RUN export CCTOOLS_HOME=/opt/cctools-7.1.12-source
 RUN PATH=${CCTOOLS_HOME}/bin:$PATH
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
