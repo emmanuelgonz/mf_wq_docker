@@ -27,8 +27,6 @@ RUN apt-get install -y python3.6-dev \
 
 RUN wget http://ccl.cse.nd.edu/software/files/cctools-7.1.12-source.tar.gz
 RUN tar -xzvf cctools-7.1.12-source.tar.gz
-RUN cd cctools-7.1.12-source
-RUN ./configure && make && make install
 RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 RUN apt-get update
 RUN apt-get install -y libgdal-dev
@@ -42,4 +40,7 @@ RUN add-apt-repository ppa:ubuntugis/ppa
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
 RUN apt-get install -y locales && locale-gen en_US.UTF-8
+RUN export CCTOOLS_HOME=/opt/cctools-7.1.12-x86_64-centos7
+RUN PATH=${CCTOOLS_HOME}/bin:$PATH
+
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
