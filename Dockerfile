@@ -6,7 +6,7 @@ COPY . /opt
 USER root
 
 RUN yum update -y
-RUN apt-get install -y python3
+RUN yum install -y python3
 
 RUN wget https://ccl.cse.nd.edu/software/files/cctools-7.1.12-x86_64-centos7.tar.gz
 RUN tar -xzvf cctools-7.1.12-x86_64-centos7.tar.gz
